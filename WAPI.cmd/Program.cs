@@ -17,10 +17,10 @@ namespace WAPI.cmd
     {
         static void Main(string[] args)
         {
-            var imageFolderPath = @"c:\temp\image\koty";
+            var imageFolderPath = @"c:\temp\image\d";
 
             var imageFiles = new List<string>();
-            string[] filePaths = Directory.GetFiles(imageFolderPath, "*.*");                       
+            string[] filePaths = Directory.GetFiles(imageFolderPath, "*.*", SearchOption.AllDirectories);                       
             foreach (var fp in filePaths)
             {
                 if (Regex.IsMatch(fp.ToLower(), @".jpg|.png|.gif$"))
@@ -28,16 +28,20 @@ namespace WAPI.cmd
             }
 
             
-            foreach (var fp in imageFiles.OrderBy(fp=>fp)) Console.WriteLine(fp);
-
-
             using (DocX document = DocX.Create(@"c:\temp\image\test.docx"))
             {
-                document.SetTitle("dupa");
+                document.SetTitle("tytuł");
                 document.SetPageMargins();
 
-                foreach (var fp in imageFiles.OrderBy(fp => fp)) 
-                    document.AddPicture(fp,title:$"{fp}\r\n");
+                int imageIndex = 1;
+                int imageCount = imageFiles.Count;
+
+                foreach (var fp in imageFiles.OrderBy(fp => fp))
+                {
+                    //document.AddPicture(fp, title: $"{fp}\r\n");
+                    document.AddPicture(fp);
+                    Console.WriteLine($"Added image {imageIndex++} / {imageCount} ({fp}).");
+                }
 
                 document.Save();
             }
