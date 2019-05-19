@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.cmd", "WAPI.cmd\WAPI.cmd.csproj", "{EE7B4612-91E2-47C5-A155-E048A09B0AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.docx", "WAPI.docx\WAPI.docx.csproj", "{B32FF617-B5FE-410D-B2B4-6F6602F766E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE7B4612-91E2-47C5-A155-E048A09B0AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7B4612-91E2-47C5-A155-E048A09B0AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7B4612-91E2-47C5-A155-E048A09B0AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7B4612-91E2-47C5-A155-E048A09B0AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF2EEE6A-FDD4-4129-9CA9-69095CBDDB7D}
+	EndGlobalSection
+EndGlobal
