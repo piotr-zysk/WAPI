@@ -17,7 +17,7 @@ namespace WAPI.cmd
     {
         static void Main(string[] args)
         {
-            var imageFolderPath = @"c:\temp\image\d";
+            var imageFolderPath = @"c:\temp\image\z1";
 
             var imageFiles = new List<string>();
             string[] filePaths = Directory.GetFiles(imageFolderPath, "*.*", SearchOption.AllDirectories);                       

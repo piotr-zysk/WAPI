@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.cmd", "WAPI.cmd\WAPI.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.docx", "WAPI.docx\WAPI.docx.csproj", "{B32FF617-B5FE-410D-B2B4-6F6602F766E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.forms", "WAPI.forms\WAPI.forms.csproj", "{ABE4E4C3-E52E-4E45-BB40-9A03E188B60C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B32FF617-B5FE-410D-B2B4-6F6602F766E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE4E4C3-E52E-4E45-BB40-9A03E188B60C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE4E4C3-E52E-4E45-BB40-9A03E188B60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE4E4C3-E52E-4E45-BB40-9A03E188B60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE4E4C3-E52E-4E45-BB40-9A03E188B60C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
