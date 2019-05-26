@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WAPI.docx;
-using Xceed.Words.NET;
+
 
 namespace WAPI.forms
 {
@@ -26,35 +26,16 @@ namespace WAPI.forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            var imageFolderPath = this.folderBrowserDialog.SelectedPath;
 
-            var imageFiles = new List<string>();
-            string[] filePaths = Directory.GetFiles(imageFolderPath, "*.*", SearchOption.AllDirectories);
-            foreach (var fp in filePaths)
-            {
-                if (Regex.IsMatch(fp.ToLower(), @".jpg|.png|.gif$"))
-                    imageFiles.Add(fp);
-            }
+            new DocXFunctions().MakeFileWithImages(
+                this.folderBrowserDialog.SelectedPath,
+                textBoxOutputFile.Text,
+                textBoxTitle.Text,
+                x => progressBar.Value = x,
+                error => MessageBox.Show(error, "Operation failed", MessageBoxButtons.OK, MessageBoxIcon.Information),
+                50
+                );
 
-
-            using (DocX document = DocX.Create(textBoxOutputFile.Text))
-            {
-                document.SetTitle(textBoxTitle.Text);
-                document.SetPageMargins();
-
-                int imageIndex = 1;
-                int imageCount = imageFiles.Count;
-
-                foreach (var fp in imageFiles.OrderBy(fp => fp))
-                {
-                    //document.AddPicture(fp, title: $"{fp}\r\n");
-                    document.AddPicture(fp);
-                    progressBar.Value = (int)Math.Round((decimal)100 * imageIndex++ / imageCount);
-                    //Console.WriteLine($"Added image {imageIndex++} / {imageCount} ({fp}).");
-                }
-
-                document.Save();
-            }
         }
 
         private void RefreshImageLocationCaption()

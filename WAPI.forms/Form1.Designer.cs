@@ -71,7 +71,7 @@ namespace WAPI.forms
             this.textBoxOutputFile.Name = "textBoxOutputFile";
             this.textBoxOutputFile.Size = new System.Drawing.Size(589, 20);
             this.textBoxOutputFile.TabIndex = 2;
-            this.textBoxOutputFile.Text = "test.docx";
+            this.textBoxOutputFile.Text = "c:\\temp\\test.docx";
             this.textBoxOutputFile.TextChanged += new System.EventHandler(this.TextBoxOutputFile_TextChanged);
             // 
             // progressBar

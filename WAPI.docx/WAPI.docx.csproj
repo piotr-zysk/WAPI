@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocxExtension.cs" />
+    <Compile Include="DocXFunctions.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
