@@ -33,7 +33,8 @@ namespace WAPI.forms
                 textBoxTitle.Text,
                 x => progressBar.Value = x,
                 error => MessageBox.Show(error, "Operation failed", MessageBoxButtons.OK, MessageBoxIcon.Information),
-                50
+                50,
+                checkBox_cutFilePrefixes.Checked
                 );
 
         }
@@ -73,6 +74,11 @@ namespace WAPI.forms
         private void TextBoxTitle_TextChanged(object sender, EventArgs e)
         {
             ProgressBarReset();
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

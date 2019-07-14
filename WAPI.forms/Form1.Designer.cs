@@ -36,6 +36,7 @@ namespace WAPI.forms
             this.textBoxOutputFile = new System.Windows.Forms.TextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
+            this.checkBox_cutFilePrefixes = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonGenerate
@@ -91,11 +92,25 @@ namespace WAPI.forms
             this.textBoxTitle.Text = "tytuł";
             this.textBoxTitle.TextChanged += new System.EventHandler(this.TextBoxTitle_TextChanged);
             // 
+            // checkBox_cutFilePrefixes
+            // 
+            this.checkBox_cutFilePrefixes.AutoSize = true;
+            this.checkBox_cutFilePrefixes.Checked = true;
+            this.checkBox_cutFilePrefixes.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_cutFilePrefixes.Location = new System.Drawing.Point(13, 173);
+            this.checkBox_cutFilePrefixes.Name = "checkBox_cutFilePrefixes";
+            this.checkBox_cutFilePrefixes.Size = new System.Drawing.Size(127, 17);
+            this.checkBox_cutFilePrefixes.TabIndex = 5;
+            this.checkBox_cutFilePrefixes.Text = "cut image file prefixes";
+            this.checkBox_cutFilePrefixes.UseVisualStyleBackColor = true;
+            this.checkBox_cutFilePrefixes.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 172);
+            this.ClientSize = new System.Drawing.Size(607, 203);
+            this.Controls.Add(this.checkBox_cutFilePrefixes);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.textBoxOutputFile);
@@ -116,6 +131,7 @@ namespace WAPI.forms
         private System.Windows.Forms.TextBox textBoxOutputFile;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox textBoxTitle;
+        private System.Windows.Forms.CheckBox checkBox_cutFilePrefixes;
     }
 }
 

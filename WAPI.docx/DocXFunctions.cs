@@ -11,16 +11,32 @@ namespace WAPI.docx
 {
     public class DocXFunctions
     {
-        public bool MakeFileWithImages(string imageFolderPath, string outputFilePath, string title, Action<int> progressPercentage, Action<string> fail, int maxImages = 50)
+        public bool MakeFileWithImages(string imageFolderPath, string outputFilePath, string title, Action<int> progressPercentage, Action<string> fail, int maxImages = 50, bool cutPrefix = false)
         {   
             var imageFiles = new List<string>();
             string[] filePaths = Directory.GetFiles(imageFolderPath, "*.*", SearchOption.AllDirectories).Take(maxImages).ToArray();
+
             foreach (var fp in filePaths)
             {
                 if (Regex.IsMatch(fp.ToLower(), @".jpg|.png|.gif$"))
                     imageFiles.Add(fp);
             }
 
+            if (cutPrefix)
+            {
+                for (int i = 0; i < imageFiles.Count; i++)
+                {
+                    var originalFilePath = imageFiles[i];
+                    int filenameStart = originalFilePath.LastIndexOf('\\');
+                    var path = originalFilePath.Substring(0, filenameStart+1);
+                    var fileName = originalFilePath.Substring(filenameStart + 2);
+
+                    var newFileName = fileName.Substring(fileName.IndexOf('_')+1);
+
+                    imageFiles[i] = path + newFileName;
+                    File.Move(originalFilePath,imageFiles[i]);
+                }
+            }
 
             using (DocX document = DocX.Create(outputFilePath))
             {
